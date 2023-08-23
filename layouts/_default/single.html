@@ -48,7 +48,7 @@
 
 
       {{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (and .Site.Params.comments (ne .Type "page"))) }}
-       <!-- Cusdis comment widget -->
+       <!-- Cusdis comment widget! -->
         <div id="cusdis_thread"
           data-host="https://cusdis.com"
           data-app-id="9f5e38f1-cf86-4ee7-8cea-7f5ab883439a"

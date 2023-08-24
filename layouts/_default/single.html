@@ -21,14 +21,13 @@
           {{ end }}
 
           {{ if $.Scratch.Get "has_related" }}
-                  <h4 class="see-also">{{ i18n "seeAlso" }}</h4>
-                  <ul>
-                {{ $num_to_show := .Site.Params.related_content_limit | default 5 }}
-                {{ range first $num_to_show (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
-                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                {{ end }}
-              </ul>
-
+            <h4 class="see-also">{{ i18n "seeAlso" }}</h4>
+            <ul>
+              {{ $num_to_show := .Site.Params.related_content_limit | default 5 }}
+              {{ range first $num_to_show (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+              {{ end }}
+            </ul>
           {{ end }}
         {{ end }}
       </article>
@@ -48,9 +47,8 @@
         </ul>
       {{ end }}
 
-
       {{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (and .Site.Params.comments (ne .Type "page"))) }}
-       <!-- Cusdis comment widget! -->
+        <!-- Cusdis comment widget! -->
         <div id="cusdis_thread"
           data-host="https://cusdis.com"
           data-app-id="9f5e38f1-cf86-4ee7-8cea-7f5ab883439a"
@@ -60,12 +58,10 @@
           data-theme="dark"
         ></div>
         <script async src="https://cusdis.com/js/cusdis.es.js"></script>
-
-        
-
       {{ end }}
 
     </div>
   </div>
 </div>
+<link rel="stylesheet" href="{{ "css/custom.css" | absURL }}">
 {{ end }}

@@ -1,0 +1,13 @@
+/* custom.css */
+#mc_embed_signup .mc-field-group label,
+#mc_embed_signup .mc-field-group input[type="email"],
+#mc_embed_signup .mc-field-group input[type="text"] {
+    color: white;
+    background-color: black;
+}
+
+/* Additional styling for buttons, if needed */
+#mc_embed_signup #mc-embedded-subscribe {
+    background-color: black;
+    color: white;
+}
